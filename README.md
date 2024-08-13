@@ -16,7 +16,8 @@ SV-TrustEval provides a comprehensive framework to evaluate how well LLMs can un
 
 ## Dataset Access
 
-The benchmark dataset, detailed evaluation protocols, and additional resources are available at: generated_questions.zip
+The benchmark dataset, detailed evaluation protocols, and additional resources are available at: [Download Benchmark Dataset](./generated_questions.zip)
+
 
 ## How to Use This Repository
 
