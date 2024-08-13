@@ -20,7 +20,40 @@ The benchmark dataset, detailed evaluation protocols, and additional resources a
 
 ## How to Use This Repository
 
-This repository contains scripts to run the benchmarks, evaluate model performance, and replicate the study findings:
-- `scripts/`: Directory containing scripts to execute benchmark tests.
-- `data/`: Folder with sample data and links to the full benchmark dataset.
-- `docs/`: Documentation on benchmark methodology and usage instructions.
+This repository contains the necessary scripts and tools to evaluate the performance of language models in code vulnerability analysis using the SV-TrustEval benchmark. Below are detailed instructions on how to set up your environment, run the evaluations for API-based Models, and interpret the results.
+
+### Prerequisites
+
+1. **Python Installation**: Ensure you have Python 3.7 or higher installed on your machine.
+2. **Dependency Installation**: Install all required Python libraries by running:
+   ```bash
+   pip install tqdm json re logging argparse tokenize openai
+   ```
+
+### Running Evaluations
+1. **Unzip Data Files**:Unzip generated_questions.zip
+
+
+2. **Configure API Keys**: Ensure you have set up your OpenAI API key in your environment. This is necessary for the script to interact with OpenAI's models. You can set it up by:
+   ```bash
+   export OPENAI_API_KEY='your_api_key_here'
+   ```
+
+3. **Edit Model Configuration**: Modify the `models` dictionary in the `run_script.py` script if you want to test additional models or change model settings. For example:
+   ```python
+   models = {
+       "GPT35": "gpt-3.5-turbo",
+       "GPT4": "gpt-4-turbo-2024-04-09"
+   }
+   ```
+  
+4. **Run the Evaluation Script**: Execute the main evaluation script using:
+   ```bash
+   python run_script.py
+   ```
+
+### Understanding the Output
+
+- The scripts will automatically log the output of the evaluation, including accuracy metrics and other relevant details, to the console and to output files within the designated directories (`LLM_result/`).
+- Each model's results are stored in separate subdirectories named after the model and the type of reasoning test (e.g., `LLM_result/GPT4/Structure_Reasoning/`).
+
