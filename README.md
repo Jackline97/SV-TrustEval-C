@@ -31,7 +31,7 @@ This repository contains the necessary scripts and tools to evaluate the perform
    ```
 
 ### Running Evaluations
-1. **Unzip Data Files**:Unzip generated_questions.zip
+1. **Unzip Data Files**: Unzip generated_questions.zip
 
 
 2. **Configure API Keys**: Ensure you have set up your OpenAI API key in your environment. This is necessary for the script to interact with OpenAI's models. You can set it up by:
