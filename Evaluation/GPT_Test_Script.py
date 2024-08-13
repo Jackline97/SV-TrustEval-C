@@ -294,6 +294,7 @@ if __name__ == '__main__':
 
     SR_QA = load_content_SR(SR_files)
     VR_QA = load_content_VR(VR_files)
-
-    # LLM_testing(SR_QA, model_name=model_name, assistant=assistant)
+    # Structure Reasoning
+    LLM_testing(SR_QA, model_name=model_name, assistant=assistant)
+    # Semantic Reasoning
     LLM_testing(VR_QA, model_name=model_name, assistant=assistant)
