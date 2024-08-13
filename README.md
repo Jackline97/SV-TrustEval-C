@@ -16,7 +16,7 @@ SV-TrustEval provides a comprehensive framework to evaluate how well LLMs can un
 
 ## Dataset Access
 
-The benchmark dataset, detailed evaluation protocols, and additional resources are available at: [SV-TrustEval Dataset](https://tinyurl.com/5xmzyerk)
+The benchmark dataset, detailed evaluation protocols, and additional resources are available at: generated_questions.zip
 
 ## How to Use This Repository
 
@@ -24,15 +24,3 @@ This repository contains scripts to run the benchmarks, evaluate model performan
 - `scripts/`: Directory containing scripts to execute benchmark tests.
 - `data/`: Folder with sample data and links to the full benchmark dataset.
 - `docs/`: Documentation on benchmark methodology and usage instructions.
-
-## Contributing
-
-We welcome contributions from the community to extend and refine this benchmark. Please read the [CONTRIBUTING.md](./CONTRIBUTING.md) file for guidelines on how to contribute.
-
-## License
-
-This project is licensed under the terms of the MIT license.
-
----
-
-Feel free to adapt the README to include more specific links, installation guides, or usage examples as per the actual contents of your repository and research requirements!
