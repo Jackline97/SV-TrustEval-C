@@ -209,7 +209,6 @@ def LLM_testing(dic_target, model_name, assistant, start_id=0):
                 for idx, qa_info in enumerate(QA):
                     content = qa_info['Question_final']
                     distance = qa_info['distance']
-                    # if 'inner_variant' in distance:
                     prediction = agent_answer(content, assistant=assistant)[0]
                     qa_info['prediction'] = prediction
                     final_res.append(qa_info)
