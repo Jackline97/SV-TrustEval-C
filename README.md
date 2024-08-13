@@ -26,6 +26,7 @@ This repository contains the necessary scripts and tools to evaluate the perform
 ### Prerequisites
 
 1. **Python Installation**: Ensure you have Python 3.7 or higher installed on your machine.
+   
 2. **Dependency Installation**: Install all required Python libraries by running:
    ```bash
    pip install tqdm json re logging argparse tokenize openai
