@@ -57,3 +57,8 @@ This repository contains the necessary scripts and tools to evaluate the perform
 - The scripts will automatically log the output of the evaluation, including accuracy metrics and other relevant details, to the console and to output files within the designated directories (`LLM_result/`).
 - Each model's results are stored in separate subdirectories named after the model and the type of reasoning test (e.g., `LLM_result/GPT4/Structure_Reasoning/`).
 
+## License
+
+This project is open-source and available under the [MIT License](LICENSE). The MIT License is a permissive license that allows you to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the software, provided that appropriate credit is given to the original author and contributors.
+
+For more details, see the [LICENSE](LICENSE) file included with this repository.
