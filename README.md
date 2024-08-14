@@ -15,8 +15,8 @@ SV-TrustEval provides a comprehensive framework to evaluate how well LLMs can un
 - **Open Resource:** Provides a valuable dataset and evaluation metrics for the community to engage with and improve upon the robustness of code vulnerability analysis tools.
 
 ## Publication
-**SV-TrustEval**: Towards Trustworthy Evaluation of Semantic and Structure Transformations of Source Code Vulnerabilities. (submitted to AAAI25 - under review)
-
+- SV-TrustEval was proposed in the following paper SV-TrustEval: Towards Trustworthy Evaluation of Semantic and Structure Transformations of Source Code Vulnerabilities. (submitted to AAAI25 - under review)
+- Here you can find a thorough description of the benchmark and the results obtained on nine LLMs.
 
 ## Dataset Access
 
