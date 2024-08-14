@@ -8,6 +8,9 @@ SV-TrustEval provides a comprehensive framework to evaluate how well LLMs can un
 - **Structure Reasoning:** Assesses the ability of LLMs to accurately discern the relationships between code elements and predict how changes can propagate errors or vulnerabilities.
 - **Semantic Reasoning:** Tests the LLMs' ability to maintain analysis accuracy across various coding scenarios, including counterfactuals, goal-driven modifications, and predictive assessments.
 
+## Result
+![Evaluation Result](Figures/res.png)
+
 ## Key Contributions
 
 - **Novel Benchmarking Approach:** Introduces new methods to measure the analytical depth of LLMs concerning code structure and semantics.
@@ -15,8 +18,8 @@ SV-TrustEval provides a comprehensive framework to evaluate how well LLMs can un
 - **Open Resource:** Provides a valuable dataset and evaluation metrics for the community to engage with and improve upon the robustness of code vulnerability analysis tools.
 
 ## Publication
-- SV-TrustEval was proposed in the following paper SV-TrustEval: Towards Trustworthy Evaluation of Semantic and Structure Transformations of Source Code Vulnerabilities. (submitted to AAAI25 - under review)
-- Here you can find a thorough description of the benchmark and the results obtained on nine LLMs.
+
+The SV-TrustEval benchmark was introduced in our research paper titled "SV-TrustEval: Towards Trustworthy Evaluation of Semantic and Structure Transformations of Source Code Vulnerabilities." This paper is currently under review for publication in AAAI25.
 
 ## Dataset Access
 
