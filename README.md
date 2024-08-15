@@ -23,7 +23,7 @@ The SV-TrustEval benchmark was introduced in our research paper titled "SV-Trust
 
 ## Dataset Access
 
-The benchmark dataset, detailed evaluation protocols, and additional resources are available at: [Download Benchmark Dataset](./SV_TrustEval.zip)
+The benchmark dataset, detailed evaluation protocols, and additional resources are available at: [Download Benchmark Dataset](./SV-TrustEval.zip)
 
 
 ## How to Use This Repository
