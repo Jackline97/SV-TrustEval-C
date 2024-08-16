@@ -1,10 +1,10 @@
-# SV-TrustEval: Towards Trustworthy Evaluation of Semantic and Structure Transformations of Source Code Vulnerabilities
+# SV-TrustEval-C: Towards Trustworthy Evaluation of Semantic and Structure Transformations of Source Code Vulnerabilities
 
-Welcome to the official repository for the SV-TrustEval benchmark, introduced in our latest research to critically assess the semantic and structural analysis capabilities of Large Language Models (LLMs) on source code vulnerabilities. This benchmark is specifically designed to address significant gaps in evaluating the reliability of LLMs' vulnerability analysis, which is crucial for their trustworthy application in real-world cybersecurity tasks.
+Welcome to the official repository for the SV-TrustEval-C benchmark, introduced in our latest research to critically assess the semantic and structural analysis capabilities of Large Language Models (LLMs) on source code vulnerabilities. This benchmark is specifically designed to address significant gaps in evaluating the reliability of LLMs' vulnerability analysis, which is crucial for their trustworthy application in real-world cybersecurity tasks.
 
-## About SV-TrustEval
-![Overview of SV-TrustEval](Figures/main_intro.png)
-SV-TrustEval provides a comprehensive framework to evaluate how well LLMs can understand and reason about code, particularly focusing on identifying and predicting vulnerabilities within the C programming language. The benchmark comprises two main components:
+## About SV-TrustEval-C
+![Overview of SV-TrustEval-C](Figures/main_intro.png)
+SV-TrustEval-C provides a comprehensive framework to evaluate how well LLMs can understand and reason about code, particularly focusing on identifying and predicting vulnerabilities within the C programming language. The benchmark comprises two main components:
 - **Structure Reasoning:** Assesses the ability of LLMs to accurately discern the relationships between code elements and predict how changes can propagate errors or vulnerabilities.
 - **Semantic Reasoning:** Tests the LLMs' ability to maintain analysis accuracy across various coding scenarios, including counterfactuals, goal-driven modifications, and predictive assessments.
 
@@ -19,7 +19,7 @@ SV-TrustEval provides a comprehensive framework to evaluate how well LLMs can un
 
 ## Publication
 
-The SV-TrustEval benchmark was introduced in our research paper titled "SV-TrustEval: Towards Trustworthy Evaluation of Semantic and Structure Transformations of Source Code Vulnerabilities." This paper is currently under review for publication in AAAI25.
+The SV-TrustEval-C benchmark was introduced in our research paper titled "SV-TrustEval-C: Towards Trustworthy Evaluation of Semantic and Structure Transformations of Source Code Vulnerabilities." This paper is currently under review for publication in AAAI25.
 
 ## Dataset Access
 
@@ -28,7 +28,7 @@ The benchmark dataset, detailed evaluation protocols, and additional resources a
 
 ## How to Use This Repository
 
-This repository contains the necessary scripts and tools to evaluate the performance of language models in code vulnerability analysis using the SV-TrustEval benchmark. Below are detailed instructions on how to set up your environment, run the evaluations for API-based Models, and interpret the results.
+This repository contains the necessary scripts and tools to evaluate the performance of language models in code vulnerability analysis using the SV-TrustEval-C benchmark. Below are detailed instructions on how to set up your environment, run the evaluations for API-based Models, and interpret the results.
 
 ### Prerequisites
 
