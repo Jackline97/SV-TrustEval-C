@@ -1,0 +1,40 @@
+[
+    {
+        "code": "void deleteContact() {\n    Contact *contacts = NULL;\n    int count = 0;\n    char deleteName[MAX_NAME_LEN];\n    int found = 0;\n    char *message = NULL;\n\n    loadContacts(&contacts, &count);\n\n    if (count == 0) {\n        printf(\"\\nNo contacts to delete.\\n\");\n        return;\n    }\n    else {\n        message = \"received\";\n    }\n\n    printf(\"\\nEnter the name of the contact to delete: \");\n    fgets(deleteName, MAX_NAME_LEN, stdin);\n    deleteName[strcspn(deleteName, \"\\n\")] = '\\0'; // Remove newline\n\n    for (int i = 0; i < count; i++) {\n        if (strcasecmp(contacts[i].name, deleteName) == 0) {\n            for (int j = i; j < count - 1; j++) {\n                contacts[j] = contacts[j + 1];\n            }\n            count--;\n            found = 1;\n            break;\n        }\n    }\n\n    if (found) {\n        saveContacts(contacts, count);\n        printf(\"\\nContact deleted successfully.\\n\");\n    } else {\n        printf(\"\\nContact not found.\\n\");\n    }\n\n    free(contacts);\n}\n",
+        "questions": [
+            {
+                "question": "Given that the parameter `count` is modified before the execution of the function `saveContacts`, evaluate the potential impact on the outcomes of `saveContacts`. Consider how `count` could influence `saveContacts`, including its role as a direct parameter, its effect on controlling conditions, or its indirect impacts through other related variables or system states.",
+                "choices": {
+                    "A": "The change to `count` directly alters the arguments passed to `saveContacts`.",
+                    "B": "There is neither a direct nor a significant indirect relationship between the changes to `count` and the behavior or output of `saveContacts`, suggesting no observable impact.",
+                    "C": "The modification of `count` might indirectly influence `saveContacts` by modifying the control statement that controls the behavior of `saveContacts`.",
+                    "D": "It is not possible to determine the effect without additional context."
+                },
+                "answer": "A",
+                "explanation": "Modifying `count` directly affects the arguments passed to `saveContacts`. Since `count` determines how many contacts are to be saved, changing its value alters the behavior of `saveContacts` by potentially changing the number of contacts it processes."
+            },
+            {
+                "question": "Given that the parameter `message` is modified before the execution of the function `free`, evaluate the potential impact on the outcomes of `free`. Consider how `message` could influence `free`, including its role as a direct parameter, its effect on controlling conditions, or its indirect impacts through other related variables or system states.",
+                "choices": {
+                    "A": "The change to `message` directly alters the arguments passed to `free`.",
+                    "B": "There is neither a direct nor a significant indirect relationship between the changes to `message` and the behavior or output of `free`, suggesting no observable impact.",
+                    "C": "The modification of `message` might indirectly influence `free` by modifying the control statement that controls the behavior of `free`.",
+                    "D": "It is not possible to determine the effect without additional context."
+                },
+                "answer": "B",
+                "explanation": "Modifying `message` does not impact `free` because `message` is not used as an argument or in controlling the behavior of `free`. Therefore, there is no observable impact on the `free` function."
+            },
+            {
+                "question": "Given that the parameter `count` is modified before the execution of the function `free`, evaluate the potential impact on the outcomes of `free`. Consider how `count` could influence `free`, including its role as a direct parameter, its effect on controlling conditions, or its indirect impacts through other related variables or system states.",
+                "choices": {
+                    "A": "The change to `count` directly alters the arguments passed to `free`.",
+                    "B": "There is neither a direct nor a significant indirect relationship between the changes to `count` and the behavior or output of `free`, suggesting no observable impact.",
+                    "C": "The modification of `count` might indirectly influence `free` by modifying the control statement that controls the behavior of `free`.",
+                    "D": "It is not possible to determine the effect without additional context."
+                },
+                "answer": "C",
+                "explanation": "Modifying `count` affects the loop that modifies the `contacts` array. Since `contacts` is subsequently passed to `free`, changes to `count` indirectly influence how `contacts` is managed, thereby affecting `free`."
+            }
+        ]
+    }
+]
