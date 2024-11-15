@@ -9,7 +9,7 @@ SV-TrustEval-C provides a comprehensive framework to evaluate how well LLMs can 
 - **Semantic Reasoning:** Tests the LLMs' ability to maintain analysis accuracy across various coding scenarios, including counterfactuals, goal-driven modifications, and predictive assessments.
 
 ## Result
-![Evaluation Result](Figures/res.png)
+![Evaluation Result](Figures/results.png)
 
 ## Key Contributions
 
