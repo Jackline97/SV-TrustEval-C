@@ -10,20 +10,6 @@ SV‑TrustEval‑C is the first reasoning‑based benchmark designed to rigorous
 Our benchmark reveals that current LLMs predominantly rely on superficial pattern matching, exposing critical gaps in their ability to understand complex code relationships and ensure trustworthy vulnerability analysis.
 
 
-## 📖 Table of Contents
-- [Key Features](#key-features)
-- [Installation](#installation)
-- [Quick Start](#quick-start)
-- [Benchmark Tasks](#benchmark-tasks)
-- [Evaluation Metrics](#evaluation-metrics)
-- [Dataset](#dataset)
-- [Results Structure](#results-structure)
-- [Supported Models](#supported-models)
-- [Contributing](#contributing)
-- [Citation](#citation)
-- [License](#license)
-
-
 
 ## ⭐ Key Features
 - 🎯 **Dual Reasoning Dimensions:** Structure (ControlFlow/DataFlow) & Semantic (Counterfactual/Goal‑Driven/Predictive)
