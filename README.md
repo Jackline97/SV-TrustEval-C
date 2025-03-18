@@ -23,7 +23,7 @@ Our benchmark reveals that current LLMs predominantly rely on superficial patter
 - [Citation](#citation)
 - [License](#license)
 
----
+
 
 ## ⭐ Key Features
 - 🎯 **Dual Reasoning Dimensions:** Structure (ControlFlow/DataFlow) & Semantic (Counterfactual/Goal‑Driven/Predictive)
@@ -31,7 +31,7 @@ Our benchmark reveals that current LLMs predominantly rely on superficial patter
 - 🔄 **Plug‑and‑Play Framework:** Seamless integration with Hugging Face models
 - 🌐 **Open Dataset & Scripts:** Fully reproducible; Reliable label accuracy
 
----
+
 
 ## ⚙️ Installation
 ```bash
@@ -40,7 +40,7 @@ cd SV-TrustEval-C
 pip install -r requirements.txt
 ```
 
----
+
 
 ## 🚀 Quick Start
 ### Single-Model Evaluation
@@ -65,7 +65,7 @@ python Eval_Script/Run_Eval_script.py \
   --save_path "./results/eval_score.json"
 ```
 
----
+
 
 ## 📋 Benchmark Tasks
 | Dimension | Task            | Description |
@@ -76,20 +76,20 @@ python Eval_Script/Run_Eval_script.py \
 | Semantic  | GoalDriven      | Safely modify code to meet functional goals |
 | Semantic  | Predictive      | Classify variants by vulnerability impact |
 
----
+
 
 ## 📈 Evaluation Metrics
 - **Accuracy**: Task-level correctness
 - **Conceptual Distance Sensitivity**: Ability to handle increasing structural complexity
 - **Reasoning Consistency**: Logical coherence across related queries
 
----
+
 
 ## 💾 Dataset
 Download the benchmark (v1.0):
 👉 [SV-TrustEval-C Official Dataset](./SV-TrustEval-C-Offical-1.0.zip)
 
----
+
 
 ## 📊 Results Structure
 ```bash
@@ -105,7 +105,7 @@ results/
 
 <img src="Figures/results.png" alt="Evaluation Results"/>
 
----
+
 
 ## 🤖 Supported Models
 - Meta Llama-3.1-8B-Instruct
@@ -116,18 +116,18 @@ results/
 - CodeLlama-13B/7B-Instruct
 - And more via Hugging Face
 
----
+
 
 ## 🤝 Contributing
 Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) and file issues or pull requests.
 
----
+
 
 ## 📚 Citation
 ```
 Accepted by IEEE Symposium on Security and Privacy (S&P) 2025! Paper will come soon
 ```
----
+
 
 
 ## 📄 License
