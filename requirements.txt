@@ -1,0 +1,25 @@
+# Core dependencies
+torch>=2.0.0
+transformers>=4.30.0
+tqdm>=4.65.0
+
+# Data processing and evaluation
+numpy>=1.24.0
+pandas>=2.0.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+scipy>=1.10.0
+
+# File handling and JSON
+json5>=0.9.10
+pathlib>=1.0.1
+
+# For tokenization and code processing
+regex>=2023.6.3
+
+# Optional - for notebook exploration
+jupyter>=1.0.0
+ipywidgets>=8.0.6
+
+# For running on CUDA
+accelerate>=0.20.3 
