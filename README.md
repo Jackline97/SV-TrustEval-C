@@ -29,6 +29,9 @@ pip install -r requirements.txt
 
 
 ## 🚀 Quick Start
+
+Before you begin, ensure that the `SV-TrustEval-C-Official-1.0` package is unzipped inside the `Eval_Script` folder.
+
 ### Single-Model Evaluation
 ```bash
 python Eval_Script/Test_Script_HF.py \
