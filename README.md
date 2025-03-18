@@ -29,7 +29,7 @@ Our benchmark reveals that current LLMs predominantly rely on superficial patter
 - 🎯 **Dual Reasoning Dimensions:** Structure (ControlFlow/DataFlow) & Semantic (Counterfactual/Goal‑Driven/Predictive)
 - 📊 **Comprehensive Metrics:** Accuracy, Conceptual Distance Sensitivity, Reasoning Consistency
 - 🔄 **Plug‑and‑Play Framework:** Seamless integration with Hugging Face models
-- 🌐 **Open Dataset & Scripts:** Fully reproducible; 100% label accuracy
+- 🌐 **Open Dataset & Scripts:** Fully reproducible; Reliable label accuracy
 
 ---
 
