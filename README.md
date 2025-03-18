@@ -126,16 +126,11 @@ Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) and fi
 ---
 
 ## 📚 Citation
-```bibtex
-@inproceedings{jackline2025svtrusteval,
-  title={{SV-TrustEval-C}: Evaluating Structure & Semantic Reasoning in LLMs for C Vulnerability Analysis},
-  author={Jackline, et al.},
-  booktitle={IEEE Symposium on Security and Privacy (S&P)},
-  year={2025}
-}
 ```
-
+Accepted by IEEE Symposium on Security and Privacy (S&P) 2025! Paper will come soon
+```
 ---
+
 
 ## 📄 License
 Released under the **MIT License**. See [LICENSE](LICENSE) for details.
