@@ -39,7 +39,7 @@ SV‑TrustEval‑C is an open benchmark to systematically evaluate LLMs’ profi
 ## ⚙️ Installation
 
 ```bash
-git clone https://github.com/your_username/SV-TrustEval-C.git
+git clone https://github.com/Jackline97/SV-TrustEval-C.git
 cd SV-TrustEval-C
 pip install -r requirements.txt
 ```
