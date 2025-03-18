@@ -68,13 +68,16 @@ python Eval_Script/Run_Eval_script.py \
 
 
 ## 📋 Benchmark Tasks
-| Dimension | Task            | Description |
-|-----------|-----------------|-------------|
-| Structure | ControlFlow     | Analyze program control-flow impacts |
-| Structure | DataFlow        | Trace data dependencies and influence |
-| Semantic  | Counterfactual  | Predict vulnerability under code perturbations |
-| Semantic  | GoalDriven      | Safely modify code to meet functional goals |
-| Semantic  | Predictive      | Classify variants by vulnerability impact |
+
+| **Dimension**        | **Task**             | **Description**                                                                              | **Statistics**           |
+|-------------------------|----------------------|-------------------------------------------------|--------------------------|
+| :gear: **Structure** | **Control Flow**     | Analyze program control-flow impacts.                          | *1,345 questions*        |
+| :gear: **Structure** | **Data Flow**        | Trace data dependencies and influence.                         | *2,430 questions*        |
+| :brain: **Semantic** | **Counterfactual**   | Predict vulnerability under code perturbations.                        | *3,748 questions*        |
+| :brain: **Semantic** | **Goal-driven**      | Safely modify code to meet functional goals.                              | *1,159 questions*        |
+| :brain: **Semantic** | **Predictive**       | Classify variants by vulnerability impact.                   | *719 questions*          |
+| :shield: **Safety**  | **Base Code Files**  | Compare safe vs. unsafe versions of code samples.                                            | *377 Safe, 377 Unsafe*   |
+| :warning: **CWEs**   | **Unique CWEs**      | Categorize vulnerabilities according to distinct Common Weakness Enumerations (CWEs).          | *82 unique CWEs*         |
 
 
 
