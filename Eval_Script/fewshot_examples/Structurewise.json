@@ -1,0 +1,40 @@
+[
+    {
+        "code": "void deleteContact() {\n    Contact *contacts = NULL;\n    int count = 0;\n    char deleteName[MAX_NAME_LEN];\n    int found = 0;\n    char *message = NULL;\n\n    loadContacts(&contacts, &count);\n\n    if (count == 0) {\n        printf(\"\\nNo contacts to delete.\\n\");\n        return;\n    }\n    if (count > 0) {\n        printf(\"\\nContacts detected.\\n\");\n    }\n    printf(\"\\nEnter the name of the contact to delete: \");\n    fgets(deleteName, MAX_NAME_LEN, stdin);\n    deleteName[strcspn(deleteName, \"\\n\")] = '\\0'; // Remove newline\n\n    for (int i = 0; i < count; i++) {\n        if (strcasecmp(contacts[i].name, deleteName) == 0) {\n            for (int j = i; j < count - 1; j++) {\n                contacts[j] = contacts[j + 1];\n            }\n            count--;\n            found = 1;\n            break;\n        }\n    }\n\n    if (found) {\n        saveContacts(contacts, count);\n        printf(\"\\nContact deleted successfully.\\n\");\n    } else {\n        printf(\"\\nContact not found.\\n\");\n    }\n\n    free(contacts);\n}\n",
+        "questions": [
+            {
+                "question": "How does modifying the control structure `if (found)` affect the behavior or output of `saveContacts(contacts, count);`?",
+                "choices": {
+                    "A": "The modification of `if (found)` directly impacts the execution of `saveContacts(contacts, count);` because its entire operation is controlled by `if (found)` and located within `if (found)`.",
+                    "B": "Modifying `if (found)` has no impact on the behavior or output of `saveContacts(contacts, count);`.",
+                    "C": "The change of `if (found)` indirectly affects the execution of `saveContacts(contacts, count);`, as the modifications in `if (found)` influence the arguments or conditions within `saveContacts(contacts, count);`.",
+                    "D": "It is not possible to determine the effect without additional context."
+                },
+                "answer": "A",
+                "explanation": "Modifying `if (found)` directly controls whether `saveContacts(contacts, count);` is executed. Changing this condition affects whether the function is called, thereby directly impacting its behavior or output."
+            },
+            {
+                "question": "How does modifying the control structure `if (count > 0)` affect the behavior or output of `free(contacts);`?",
+                "choices": {
+                    "A": "The modification of `if (count > 0)` directly impacts the execution of `free(contacts);` because it changes the output message before `free(contacts);` is called.",
+                    "B": "Modifying `if (count > 0)` has no impact on the behavior or output of `free(contacts);`.",
+                    "C": "The change of the `if (count > 0)` statement indirectly affects the execution of `free(contacts);`, as the modifications influence the arguments or conditions within `free(contacts);`.",
+                    "D": "It is not possible to determine the effect without additional context."
+                },
+                "answer": "B",
+                "explanation": "Modifying `if (count > 0)` only affects the execution of the `printf` statement that outputs \"Contacts detected.\" This control structure does not influence the `free(contacts);` function, as `free` operates independently of the `if (count > 0)` condition. Therefore, there is no observable impact on `free(contacts);`."
+            },
+            {
+                "question": "How does modifying the control structure `for (int j = i; j < count - 1; j++)` affect the behavior or output of `free(contacts);`?",
+                "choices": {
+                    "A": "The modification of `for (int j = i; j < count - 1; j++)` directly impacts the execution of `free(contacts);` because its entire operation is controlled by `for (int j = i; j < count - 1; j++)` and located within it.",
+                    "B": "Modifying `for (int j = i; j < count - 1; j++)` has no impact on the behavior or output of `free(contacts);`.",
+                    "C": "The change of `for (int j = i; j < count - 1; j++)` indirectly affects the execution of `free(contacts);`, as the modifications in `for (int j = i; j < count - 1; j++)` influence the state or contents of `contacts` before it is freed.",
+                    "D": "It is not possible to determine the effect without additional context."
+                },
+                "answer": "C",
+                "explanation": "The `for` loop modifies the `contacts` array by shifting elements to remove the deleted contact. This alteration changes the state of `contacts` before it is passed to `free(contacts);`. As a result, the modifications in the loop indirectly influence how `contacts` is managed, thereby affecting the behavior of the `free` function."
+            }
+        ]
+    }
+]
