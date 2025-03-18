@@ -105,7 +105,7 @@ results/
         └── Predictive/
 ```
 
-<img src="Figures/results.png" alt="Evaluation Results" width="600"/>
+<img src="Figures/results.png" alt="Evaluation Results" width="800"/>
 
 ---
 
