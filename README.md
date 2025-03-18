@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE) [![IEEE S&P 2025](https://img.shields.io/badge/Publication-S%26P2025-blueviolet)](https://ieeexplore.ieee.org/document/) [![Python](https://img.shields.io/badge/Python-3.6%2B-blue.svg)](https://www.python.org) [![Dataset](https://img.shields.io/badge/Dataset-v1.0-blue)](https://anonymous.4open.science/r/TrustEval-1D7B)
 
-<img src="Figures/main_intro.png" alt="SV-TrustEval-C Overview" width="800"/>
+<img src="Figures/main_intro.png" alt="SV-TrustEval-C Overview"/>
 
 ## 🔍 Overview
 SV‑TrustEval‑C is the first reasoning‑based benchmark designed to rigorously evaluate Large Language Models (LLMs) on both **structure** (control/data flow) and **semantic** reasoning for vulnerability analysis in C source code. Unlike existing benchmarks that focus on pattern recognition, SV‑TrustEval‑C measures logical consistency, adaptability to code transformations, and real‑world security reasoning across six core tasks.
@@ -105,7 +105,7 @@ results/
         └── Predictive/
 ```
 
-<img src="Figures/results.png" alt="Evaluation Results" width="800"/>
+<img src="Figures/results.png" alt="Evaluation Results"/>
 
 ---
 
