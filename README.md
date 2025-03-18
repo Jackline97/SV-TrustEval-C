@@ -87,7 +87,7 @@ python Eval_Script/Run_Eval_script.py \
 
 ## 💾 Dataset
 Download the benchmark (v1.0):
-👉 [SV-TrustEval-C Official Dataset](https://anonymous.4open.science/r/TrustEval-1D7B)
+👉 [SV-TrustEval-C Official Dataset](./SV-TrustEval-C-Offical-1.0.zip)
 
 Structure: Organized by CWE category with paired safe/unsafe/impaired variants and question templates.
 
