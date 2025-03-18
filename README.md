@@ -1,73 +1,184 @@
-# SV-TrustEval-C: Evaluating Structure and Semantic Reasoning in Large Language Models for Source Code Vulnerability Analysis
+# SV-TrustEval-C
+*Evaluating Structure and Semantic Reasoning in Large Language Models for Source Code Vulnerability Analysis*
 
-Welcome to the official repository for the SV-TrustEval-C benchmark, introduced in our latest research to critically assess the semantic and structural analysis capabilities of Large Language Models (LLMs) on source code vulnerabilities. This benchmark is specifically designed to address significant gaps in evaluating the reliability of LLMs' vulnerability analysis, which is crucial for their trustworthy application in real-world cybersecurity tasks.
+SV-TrustEval-C is a benchmark designed to critically assess Large Language Models’ (LLMs) ability to analyze and reason about vulnerabilities in C source code. This repository contains the benchmark framework, dataset, evaluation scripts, and detailed documentation to advance research in secure code analysis.
+
+---
+
+## Table of Contents
+
+- [About SV-TrustEval-C](#about-sv-trusteval-c)
+- [Key Contributions](#key-contributions)
+- [Publication](#publication)
+- [Dataset Access](#dataset-access)
+- [Repository Structure](#repository-structure)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+  - [Running Tests with a Single Model](#running-tests-with-a-single-model)
+  - [Running Tests with Multiple Models](#running-tests-with-multiple-models)
+  - [Evaluating Model Performance](#evaluating-model-performance)
+- [Benchmark Tasks](#benchmark-tasks)
+- [Evaluation Metrics](#evaluation-metrics)
+- [Inference Modes](#inference-modes)
+- [Supported Models](#supported-models)
+- [Results](#results)
+- [License](#license)
+
+---
 
 ## About SV-TrustEval-C
-![Overview of SV-TrustEval-C](Figures/main_intro.png)
-SV-TrustEval-C provides a comprehensive framework to evaluate how well LLMs can understand and reason about code, particularly focusing on identifying and predicting vulnerabilities within the C programming language. The benchmark comprises two main components:
-- **Structure Reasoning:** Assesses the ability of LLMs to accurately discern the relationships between code elements and predict how changes can propagate errors or vulnerabilities.
-- **Semantic Reasoning:** Tests the LLMs' ability to maintain analysis accuracy across various coding scenarios, including counterfactuals, goal-driven modifications, and predictive assessments.
 
-## Result
-![Evaluation Result](Figures/results.png)
+![Overview of SV-TrustEval-C](Figures/main_intro.png)
+
+SV-TrustEval-C evaluates LLMs on two core dimensions:
+
+- **Structure Reasoning:** Understanding program control flow and data flow relationships.
+- **Semantic Reasoning:** Assessing vulnerability detection through baseline, counterfactual, goal-driven, and predictive tasks.
+
+---
 
 ## Key Contributions
 
-- **Novel Benchmarking Approach:** Introduces new methods to measure the analytical depth of LLMs concerning code structure and semantics.
-- **Insightful Evaluations:** Offers in-depth insights into the current limitations and capabilities of state-of-the-art LLMs in handling complex code analysis tasks.
-- **Open Resource:** Provides a valuable dataset and evaluation metrics for the community to engage with and improve upon the robustness of code vulnerability analysis tools.
+- Introduces novel metrics for measuring structural and semantic analysis depth.
+- Provides comprehensive insights into current LLM strengths and limitations for vulnerability analysis.
+- Offers an open benchmark dataset and evaluation framework for community-driven improvements.
+
+---
 
 ## Publication
 
-The SV-TrustEval-C benchmark was introduced in our research paper titled "SV-TrustEval-C: Evaluating Structure and Semantic Reasoning in Large Language Models for Source Code Vulnerability Analysis.".
+"SV-TrustEval-C: Evaluating Structure and Semantic Reasoning in Large Language Models for Source Code Vulnerability Analysis," accepted at the **46th IEEE Symposium on Security and Privacy (S&P 2025)**.
+
+---
 
 ## Dataset Access
 
-The benchmark dataset, detailed evaluation protocols, and additional resources are available at: [Download Benchmark Dataset](./SV-TrustEval.zip)
+Download the benchmark dataset and resources:
 
+[Download Benchmark Dataset](./SV-TrustEval-C-Offical-1.0.zip)
 
-## How to Use This Repository
+---
 
-This repository contains the necessary scripts and tools to evaluate the performance of language models in code vulnerability analysis using the SV-TrustEval-C benchmark. Below are detailed instructions on how to set up your environment, run the evaluations for API-based Models, and interpret the results.
+## Repository Structure
+
+```plaintext
+.
+└── Eval_Script/
+    ├── fewshot_examples/
+    ├── Test_Script_HF.py
+    ├── Run_Test_script_HF.py
+    ├── Eval_script.py
+    └── Run_Eval_script.py
+```
+
+---
+
+## Getting Started
 
 ### Prerequisites
 
-1. **Python Installation**: Ensure you have Python 3.7 or higher installed on your machine.
-   
-2. **Dependency Installation**: Install all required Python libraries by running:
-   ```bash
-   pip install tqdm json re logging argparse tokenize openai
-   ```
+- Python 3.6+
+- PyTorch
+- Transformers (Hugging Face)
+- CUDA-compatible GPU (recommended)
 
-### Running Evaluations
-1. **Unzip Data Files**: Unzip generated_questions.zip
+### Installation
 
+```bash
+git clone https://github.com/your_username/SV-TrustEval-C.git
+cd SV-TrustEval-C
+pip install torch transformers tqdm
+```
 
-2. **Configure API Keys**: Ensure you have set up your OpenAI API key in your environment. This is necessary for the script to interact with OpenAI's models. You can set it up by:
-   ```bash
-   export OPENAI_API_KEY='your_api_key_here'
-   ```
+---
 
-3. **Edit Model Configuration**: Modify the `models` dictionary in the `run_script.py` script if you want to test additional models or change model settings. For example:
-   ```python
-   models = {
-       "GPT35": "gpt-3.5-turbo",
-       "GPT4": "gpt-4-turbo-2024-04-09"
-   }
-   ```
-  
-4. **Run the Evaluation Script**: Execute the main evaluation script using:
-   ```bash
-   python run_script.py
-   ```
+## Usage
 
-### Understanding the Output
+### Running Tests with a Single Model
 
-- The scripts will automatically log the output of the evaluation, including accuracy metrics and other relevant details, to the console and to output files within the designated directories (`LLM_result/`).
-- Each model's results are stored in separate subdirectories named after the model and the type of reasoning test (e.g., `LLM_result/GPT4/Structure_Reasoning/`).
+```bash
+python Test_Script_HF.py --model_name "Llama31-8b" \
+                         --model_loc "meta-llama/Meta-Llama-3.1-8B-Instruct" \
+                         --benchmark_loc "SV-TrustEval-C-Offical-1.0" \
+                         --result_loc "SV-TrustEval-C-Offical-1.0_results" \
+                         --temperature 0.0 \
+                         --inference_mode "zero-shot"
+```
+
+### Running Tests with Multiple Models
+
+```bash
+python Run_Test_script_HF.py
+```
+
+### Evaluating Model Performance
+
+```bash
+python Run_Eval_script.py
+```
+or
+```bash
+python Eval_script.py --root_folder "SV-TrustEval-C-Offical-1.0_results/LLM_result_zero-shot_0.0" \
+                      --save_path "SV-TrustEval-C-Offical-1.0_results/eval_score"
+```
+
+---
+
+## Benchmark Tasks
+
+### Structure Reasoning
+- **ControlFlow**: Program control flow understanding
+- **DataFlow**: Data flow and variable relationship comprehension
+
+### Semantic Reasoning
+- **Base_questions**: Baseline vulnerability detection
+- **Counterfactual**: Counterfactual reasoning
+- **GoalDriven**: Goal-oriented reasoning
+- **Predictive**: Predictive vulnerability assessment
+
+---
+
+## Evaluation Metrics
+
+- Accuracy across tasks
+- Performance variation by conceptual distance
+- Consistency of reasoning
+
+---
+
+## Inference Modes
+
+- **Zero-shot**: No examples provided
+- **Few-shot**: In-context learning with examples
+
+---
+
+## Supported Models
+
+Compatible Hugging Face models include Llama-3.1-8B-Instruct, Gemma-7B-IT, Mistral-7B-Instruct, CodeQwen1.5-7B, CodeGemma-7B, CodeLlama-13B/7B-Instruct, and more.
+
+---
+
+## Results
+
+Results are saved under:
+
+```plaintext
+result_loc/
+└── LLM_result_[inference_mode]_[temperature]/
+    └── [model_name]/
+        ├── ControlFlow/
+        ├── DataFlow/
+        ├── Base_questions/
+        ├── Counterfactual/
+        ├── GoalDriven/
+        └── Predictive/
+```
+
+![Evaluation Result](Figures/results.png)
+
+---
 
 ## License
 
-This project is open-source and available under the [MIT License](LICENSE). The MIT License is a permissive license that allows you to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the software, provided that appropriate credit is given to the original author and contributors.
-
-For more details, see the [LICENSE](LICENSE) file included with this repository.
+This project is released under the MIT License. See [LICENSE](LICENSE) for details.
