@@ -1,171 +1,116 @@
-# SV-TrustEval-C
-*Evaluating Structure and Semantic Reasoning in Large Language Models for Source Code Vulnerability Analysis*
+# SV‑TrustEval‑C 🚨🔒
 
-SV-TrustEval-C is a benchmark designed to critically assess Large Language Models’ (LLMs) ability to analyze and reason about vulnerabilities in C source code. This repository contains the benchmark framework, dataset, evaluation scripts, and detailed documentation to advance research in secure code analysis.
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE) [![IEEE S&P 2025](https://img.shields.io/badge/Publication-S%26P2025-blueviolet)](https://ieeexplore.ieee.org/document/) [![Python](https://img.shields.io/badge/Python-3.6%2B-blue.svg)](https://www.python.org)
+
+<img src="Figures/main_intro.png" alt="SV-TrustEval-C Overview" width="800"/>
+
+**Evaluating Structure & Semantic Reasoning in LLMs for C Source Code Vulnerability Analysis**
+
+SV‑TrustEval‑C is an open benchmark to systematically evaluate LLMs’ proficiency in understanding and reasoning about security vulnerabilities in C code. It measures both control/data flow (Structure Reasoning) and semantic vulnerability detection (Semantic Reasoning) across four core tasks.
 
 ---
 
-## Table of Contents
-
-- [About SV-TrustEval-C](#about-sv-trusteval-c)
-- [Key Contributions](#key-contributions)
-- [Publication](#publication)
-- [Dataset Access](#dataset-access)
-- [Repository Structure](#repository-structure)
-- [Getting Started](#getting-started)
+## 📖 Table of Contents
+- [Key Features](#key-features)
+- [Installation](#installation)
 - [Usage](#usage)
-  - [Running Tests with a Single Model](#running-tests-with-a-single-model)
-  - [Running Tests with Multiple Models](#running-tests-with-multiple-models)
-  - [Evaluating Model Performance](#evaluating-model-performance)
+  - [Single-Model Evaluation](#single-model-evaluation)
+  - [Batch Evaluation](#batch-evaluation)
+  - [Performance Analysis](#performance-analysis)
 - [Benchmark Tasks](#benchmark-tasks)
-- [Evaluation Metrics](#evaluation-metrics)
-- [Inference Modes](#inference-modes)
-- [Supported Models](#supported-models)
+- [Metrics](#metrics)
+- [Dataset](#dataset)
 - [Results](#results)
+- [Supported Models](#supported-models)
+- [Contributing](#contributing)
+- [Citation](#citation)
 - [License](#license)
 
 ---
 
-## About SV-TrustEval-C
-
-![Overview of SV-TrustEval-C](Figures/main_intro.png)
-
-SV-TrustEval-C evaluates LLMs on two core dimensions:
-
-- **Structure Reasoning:** Understanding program control flow and data flow relationships.
-- **Semantic Reasoning:** Assessing vulnerability detection through baseline, counterfactual, goal-driven, and predictive tasks.
+## ⭐ Key Features
+- ✅ **Dual Reasoning Dimensions:** Structure (ControlFlow/DataFlow) & Semantic (Baseline/Counterfactual/GoalDriven/Predictive)
+- 📊 **Rich Evaluation Metrics:** Accuracy, conceptual distance, reasoning consistency
+- 🔧 **Plug‑and‑Play Framework:** Compatible with Hugging Face models
+- 🌐 **Open Dataset & Scripts:** Easily reproduce and extend
 
 ---
 
-## Key Contributions
-
-- Introduces novel metrics for measuring structural and semantic analysis depth.
-- Provides comprehensive insights into current LLM strengths and limitations for vulnerability analysis.
-- Offers an open benchmark dataset and evaluation framework for community-driven improvements.
-
----
-
-## Publication
-
-"SV-TrustEval-C: Evaluating Structure and Semantic Reasoning in Large Language Models for Source Code Vulnerability Analysis," accepted at the **46th IEEE Symposium on Security and Privacy (S&P 2025)**.
-
----
-
-## Dataset Access
-
-Download the benchmark dataset and resources:
-
-[Download Benchmark Dataset](./SV-TrustEval-C-Offical-1.0.zip)
-
----
-
-## Repository Structure
-
-```plaintext
-.
-└── Eval_Script/
-    ├── fewshot_examples/
-    ├── Test_Script_HF.py
-    ├── Run_Test_script_HF.py
-    ├── Eval_script.py
-    └── Run_Eval_script.py
-```
-
----
-
-## Getting Started
-
-### Prerequisites
-
-- Python 3.6+
-- PyTorch
-- Transformers (Hugging Face)
-- CUDA-compatible GPU (recommended)
-
-### Installation
+## ⚙️ Installation
 
 ```bash
 git clone https://github.com/your_username/SV-TrustEval-C.git
 cd SV-TrustEval-C
-pip install torch transformers tqdm
+pip install -r requirements.txt
 ```
 
 ---
 
-## Usage
+## 🎯 Usage
 
-### Running Tests with a Single Model
+### Single-Model Evaluation
 
 ```bash
-python Test_Script_HF.py --model_name "Llama31-8b" \
-                         --model_loc "meta-llama/Meta-Llama-3.1-8B-Instruct" \
-                         --benchmark_loc "SV-TrustEval-C-Offical-1.0" \
-                         --result_loc "SV-TrustEval-C-Offical-1.0_results" \
-                         --temperature 0.0 \
-                         --inference_mode "zero-shot"
+python Eval_Script/Test_Script_HF.py \
+  --model_name "Llama31-8b" \
+  --model_loc "meta-llama/Meta-Llama-3.1-8B-Instruct" \
+  --benchmark_loc "./SV-TrustEval-C-Offical-1.0" \
+  --result_loc "./results" \
+  --temperature 0.0 \
+  --inference_mode "zero-shot"
 ```
 
-### Running Tests with Multiple Models
+### Batch Evaluation
 
 ```bash
-python Run_Test_script_HF.py
+python Eval_Script/Run_Test_script_HF.py
 ```
 
-### Evaluating Model Performance
+### Performance Analysis
 
 ```bash
-python Run_Eval_script.py
+python Eval_Script/Run_Eval_script.py \
+  --root_folder "./results/LLM_result_zero-shot_0.0" \
+  --save_path "./results/eval_score.json"
 ```
-or
+
+---
+
+## 📋 Benchmark Tasks
+
+| Dimension | Task            | Description |
+|-----------|-----------------|-------------|
+| Structure | ControlFlow     | Program control-flow analysis |
+| Structure | DataFlow        | Variable/data relationship comprehension |
+| Semantic  | Base_questions  | Baseline vulnerability detection |
+| Semantic  | Counterfactual  | Reasoning about “what-if” scenarios |
+| Semantic  | GoalDriven      | Task-oriented vulnerability identification |
+| Semantic  | Predictive      | Predicting unseen vulnerabilities |
+
+---
+
+## 📈 Metrics
+
+- **Accuracy** across tasks
+- **Conceptual Distance Sensitivity**
+- **Reasoning Consistency Score**
+
+---
+
+## 💾 Dataset
+
+Download the benchmark:  
+👉 [SV-TrustEval-C Official v1.0](./SV-TrustEval-C-Offical-1.0.zip)
+
+---
+
+## 📊 Results
+
+Results directory structure:
+
 ```bash
-python Eval_script.py --root_folder "SV-TrustEval-C-Offical-1.0_results/LLM_result_zero-shot_0.0" \
-                      --save_path "SV-TrustEval-C-Offical-1.0_results/eval_score"
-```
-
----
-
-## Benchmark Tasks
-
-### Structure Reasoning
-- **ControlFlow**: Program control flow understanding
-- **DataFlow**: Data flow and variable relationship comprehension
-
-### Semantic Reasoning
-- **Base_questions**: Baseline vulnerability detection
-- **Counterfactual**: Counterfactual reasoning
-- **GoalDriven**: Goal-oriented reasoning
-- **Predictive**: Predictive vulnerability assessment
-
----
-
-## Evaluation Metrics
-
-- Accuracy across tasks
-- Performance variation by conceptual distance
-- Consistency of reasoning
-
----
-
-## Inference Modes
-
-- **Zero-shot**: No examples provided
-- **Few-shot**: In-context learning with examples
-
----
-
-## Supported Models
-
-Compatible Hugging Face models include Llama-3.1-8B-Instruct, Gemma-7B-IT, Mistral-7B-Instruct, CodeQwen1.5-7B, CodeGemma-7B, CodeLlama-13B/7B-Instruct, and more.
-
----
-
-## Results
-
-Results are saved under:
-
-```plaintext
-result_loc/
-└── LLM_result_[inference_mode]_[temperature]/
+results/
+└── LLM_result_[mode]_[temp]/
     └── [model_name]/
         ├── ControlFlow/
         ├── DataFlow/
@@ -175,10 +120,30 @@ result_loc/
         └── Predictive/
 ```
 
-![Evaluation Result](Figures/results.png)
+<img src="Figures/results.png" alt="Evaluation Results" width="600"/>
 
 ---
 
-## License
+## 🤖 Supported Models
 
-This project is released under the MIT License. See [LICENSE](LICENSE) for details.
+Llama-3.1-8B-Instruct, Gemma-7B-IT, Mistral-7B-Instruct, CodeQwen1.5-7B, CodeGemma-7B, CodeLlama-13B/7B-Instruct, and more.
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+
+---
+
+## 📚 Citation
+
+```bibtex
+Coming soon
+```
+
+---
+
+## 📄 License
+
+Released under the **MIT License**. See [LICENSE](LICENSE) for details.
