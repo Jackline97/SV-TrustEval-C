@@ -30,7 +30,12 @@ pip install -r requirements.txt
 
 ## 🚀 Quick Start
 
-Before you begin, ensure that the `SV-TrustEval-C-Official-1.0` package is unzipped inside the `Eval_Script` folder.
+**Before you begin, ensure you have downloaded and preprocessed the dataset from Hugging Face by running:**
+
+```bash
+python Eval_Script/data_preprocessing.py
+```
+This step prepares the necessary data for evaluation.
 
 ### Single-Model Evaluation
 ```bash
