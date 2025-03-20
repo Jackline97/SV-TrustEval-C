@@ -83,11 +83,15 @@ python Eval_Script/Run_Eval_script.py \
 
 ## 💾 Dataset
 
-Download the benchmark (v1.0) from Hugging Face:
+Download the benchmark (v1.0) directly from Hugging Face:
 
 👉 [SV-TrustEval-C Official Dataset](https://huggingface.co/datasets/Jackline/SV-TrustEval-C-1.0)
 
+Alternatively, run the following command to automatically download and preprocess the dataset:
 
+```bash
+python Eval_Script/data_preprocessing.py
+```
 
 ## 📊 Results Structure
 ```bash
