@@ -27,7 +27,7 @@ class QuestionData:
 class DataPreprocessor:
     """Handles preprocessing of the SV-TrustEval-C dataset."""
     
-    def __init__(self, dataset_name: str = "Jackline/SV-TrustEval-C-1.0"):
+    def __init__(self, dataset_name: str = "LLMs4CodeSecurity/SV-TrustEval-C-1.0"):
         """
         Initialize the data preprocessor.
         
