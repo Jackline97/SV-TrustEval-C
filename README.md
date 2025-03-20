@@ -76,10 +76,11 @@ python Eval_Script/Run_Eval_script.py \
 - **Reasoning Consistency**: Logical coherence across related queries
 
 
-
 ## 💾 Dataset
-Download the benchmark (v1.0):
-👉 [SV-TrustEval-C Official Dataset](./SV-TrustEval-C-Offical-1.0.zip)
+
+Download the benchmark (v1.0) from Hugging Face:
+
+👉 [SV-TrustEval-C Official Dataset](https://huggingface.co/datasets/Jackline/SV-TrustEval-C-1.0)
 
 
 
