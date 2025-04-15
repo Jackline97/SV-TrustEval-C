@@ -81,17 +81,33 @@ python Eval_Script/Run_Eval_script.py \
 - **Reasoning Consistency**: Logical coherence across related queries
 
 
+
 ## 💾 Dataset
 
-Download the benchmark (v1.0) directly from Hugging Face:
+### Official Dataset (v1.0)
 
-👉 [SV-TrustEval-C Official Dataset](https://huggingface.co/datasets/Jackline/SV-TrustEval-C-1.0)
+Download the official benchmark directly from [Hugging Face](https://huggingface.co/datasets/Jackline/SV-TrustEval-C-1.0):
 
-Alternatively, run the following command to automatically download and preprocess the dataset:
+- **SV-TrustEval-C Official Dataset**  
+  👉 [Download Here](https://huggingface.co/datasets/Jackline/SV-TrustEval-C-1.0)
+
+Alternatively, use the following command to automatically download and preprocess the dataset:
 
 ```bash
 python Eval_Script/data_preprocessing.py
 ```
+
+### PrimeVul Benchmark
+
+For the PrimeVul version, please download the file:
+
+- **SV-TrustEval_primevul.zip**
+
+**Note:**  
+- No preprocessing is required for the PrimeVul benchmark.  
+- The PrimeVul code snippet is not validated through a compilable check due to the absence of a dedicated environment.
+
+
 
 ## 📊 Results Structure
 ```bash
