@@ -135,12 +135,6 @@ results/
 - And more via Hugging Face
 
 
-
-## 🤝 Contributing
-Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) and file issues or pull requests.
-
-
-
 ## 📚 Citation
 ```bibtex
 @INPROCEEDINGS {,
