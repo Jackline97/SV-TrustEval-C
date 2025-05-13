@@ -142,8 +142,22 @@ Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) and fi
 
 
 ## 📚 Citation
-```
-Accepted by IEEE Symposium on Security and Privacy (S&P) 2025! Paper will come soon
+```bibtex
+@INPROCEEDINGS {,
+author = { Li, Yansong and Branco, Paula and Hoole, Alexander M. and Marwah, Manish and Koduvely, Hari Manassery and Jourdan, Guy-Vincent and Jou, Stephan },
+booktitle = { 2025 IEEE Symposium on Security and Privacy (SP) },
+title = {{ SV-TrustEval-C: Evaluating Structure and Semantic Reasoning in Large Language Models for Source Code Vulnerability Analysis }},
+year = {2025},
+volume = {},
+ISSN = {2375-1207},
+pages = {3014-3032},
+abstract = { As Large Language Models (LLMs) evolve in understanding and generating code, accurately evaluating their reliability in analyzing source code vulnerabilities becomes increasingly vital. While studies have examined LLM capabilities in tasks like vulnerability detection and repair, they often overlook the importance of both structure and semantic reasoning crucial for trustworthy vulnerability analysis. To address this gap, we introduce \textsc{SV-TrustEval-C}, a benchmark designed to evaluate LLMs' abilities for vulnerability analysis of code written in the C programming language through two key dimensions: structure reasoning—assessing how models identify relationships between code elements under varying data and control flow complexities; and semantic reasoning—examining their logical consistency in scenarios where code is structurally and semantically perturbed. Our results show that current LLMs are far from satisfactory in understanding complex code relationships and that their vulnerability analyses rely more on pattern matching than on robust logical reasoning. These findings underscore the effectiveness of the \textsc{SV-TrustEval-C} benchmark and highlight critical areas for enhancing the reasoning capabilities and trustworthiness of LLMs in real-world vulnerability analysis tasks. Our initial benchmark dataset is available at \textcolor{blue}{\url{https://huggingface.co/datasets/LLMs4CodeSecurity/SV-TrustEval-C-1.0}} },
+keywords = {source code vulnerability;large language model},
+doi = {10.1109/SP61157.2025.00191},
+url = {https://doi.ieeecomputersociety.org/10.1109/SP61157.2025.00191},
+publisher = {IEEE Computer Society},
+address = {Los Alamitos, CA, USA},
+month =May}
 ```
 
 
