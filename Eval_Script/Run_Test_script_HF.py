@@ -18,11 +18,12 @@ for model_name, model_loc in models.items():
         "python", "Test_Script_HF.py",
         "--model_name", model_name,
         "--model_loc", model_loc,
-        "--benchmark_loc", "SV-TrustEval-C-Offical-1.0",
-        "--result_loc", "SV-TrustEval-C-Offical-1.0_results",
+        "--benchmark_loc", "SV-TrustEval-C-Official-1.0",
+        "--result_loc", "SV-TrustEval-C-Official-1.0_results",
         "--temperature", "0.0",
         "--inference_mode", "zero-shot"  # "zero-shot" or "few-shot" (ICL)
     ]
     # Execute the command and check for errors
     subprocess.run(command, check=True)
+
 
