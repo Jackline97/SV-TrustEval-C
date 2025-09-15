@@ -167,7 +167,7 @@ class DataPreprocessor:
                     logger.error(f"Error writing to {file_path}: {e}")
                     raise
 
-    def prepare_dataset(self, folder_path: Union[str, Path] = "SV-TrustEval-C-Offical-1.0") -> None:
+    def prepare_dataset(self, folder_path: Union[str, Path] = "SV-TrustEval-C-Official-1.0") -> None:
         """
         Prepare and store the complete dataset.
         
@@ -208,3 +208,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
