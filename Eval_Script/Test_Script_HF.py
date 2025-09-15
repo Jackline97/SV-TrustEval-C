@@ -336,9 +336,9 @@ if __name__ == '__main__':
                         help="Name identifier for the model.")
     parser.add_argument("--model_loc", type=str, required=True,
                         help="Path or URL to the model location.")
-    parser.add_argument("--benchmark_loc", type=str, default="SV-TrustEval-C-Offical-1.0",
+    parser.add_argument("--benchmark_loc", type=str, default="SV-TrustEval-C-Official-1.0",
                         help="benchmark folder location")
-    parser.add_argument("--result_loc", type=str, default="SV-TrustEval-C-Offical-1.0_results",
+    parser.add_argument("--result_loc", type=str, default="SV-TrustEval-C-Official-1.0_results",
                         help="result folder location")        
     parser.add_argument("--temperature", type=float, default=0.0,
                         help="Temperature setting for text generation.")
@@ -384,4 +384,5 @@ if __name__ == '__main__':
     LLM_testing(SR_QA, model_name=model_name, chatbot=chatbot,
                 inference_mode=inference_mode, root_path=root_path, temperature=temperature)
     LLM_testing(VR_QA, model_name=model_name, chatbot=chatbot,
+
                 inference_mode=inference_mode, root_path=root_path, temperature=temperature)
